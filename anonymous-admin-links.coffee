@@ -4,6 +4,9 @@ String::startsWith = ( comparison ) ->
 	@substring( 0, comparison.length ) is comparison
 
 isExternal = ( href ) ->
+	# Make sure the string exists
+	return false if href.length is 0
+
 	# No relative links
 	return false unless href.match /^https?:\/\//
 

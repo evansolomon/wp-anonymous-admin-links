@@ -9,6 +9,9 @@
   };
 
   isExternal = function(href) {
+    if (href.length === 0) {
+      return false;
+    }
     if (!href.match(/^https?:\/\//)) {
       return false;
     }
