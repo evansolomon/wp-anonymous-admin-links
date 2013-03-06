@@ -1,9 +1,12 @@
+String::startsWith = ( comparison ) ->
+	@substring( 0, comparison.length ) is comparison
+
 isExternal = ( href ) ->
 	# No relative links
-	return false unless href.substring( 0, 4 ) is 'http'
+	return false unless href.startsWith 'http'
 
 	# Prevent changing links multiple times
-	return false if href.substring( 0, 16 ) is 'http://href.li/?'
+	return false if href.startsWith 'http://href.li/?'
 
 	# Nothing on the same domain
 	href.substring( 0, location.origin.length ) isnt location.origin

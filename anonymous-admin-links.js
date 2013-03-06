@@ -2,11 +2,15 @@
 (function() {
   var isExternal;
 
+  String.prototype.startsWith = function(comparison) {
+    return this.substring(0, comparison.length) === comparison;
+  };
+
   isExternal = function(href) {
-    if (href.substring(0, 4) !== 'http') {
+    if (!href.startsWith('http')) {
       return false;
     }
-    if (href.substring(0, 16) === 'http://href.li/?') {
+    if (href.startsWith('http://href.li/?')) {
       return false;
     }
     return href.substring(0, location.origin.length) !== location.origin;
