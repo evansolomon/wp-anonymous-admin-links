@@ -9,6 +9,6 @@ isExternal = ( href ) ->
 	href.substring( 0, location.origin.length ) isnt location.origin
 
 jQuery ( $ ) ->
-	$( 'body' ).on 'mousedown', 'a', ( e ) ->
+	$( 'body' ).on 'mousedown', 'a', ->
 		# Rewrite the link if it's external
 		$( @ ).attr( 'href', "http://href.li/?#{@href}" ) if isExternal @href

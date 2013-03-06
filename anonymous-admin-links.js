@@ -13,7 +13,7 @@
   };
 
   jQuery(function($) {
-    return $('body').on('mousedown', 'a', function(e) {
+    return $('body').on('mousedown', 'a', function() {
       if (isExternal(this.href)) {
         return $(this).attr('href', "http://href.li/?" + this.href);
       }
