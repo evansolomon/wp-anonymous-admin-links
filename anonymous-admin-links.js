@@ -14,10 +14,9 @@
 
   jQuery(function($) {
     return $('body').on('mousedown', 'a', function(e) {
-      if (!isExternal(this.href)) {
-        return;
+      if (isExternal(this.href)) {
+        return $(this).attr('href', "http://href.li/?" + this.href);
       }
-      return $(this).attr('href', "http://href.li/?" + this.href);
     });
   });
 

@@ -10,8 +10,5 @@ isExternal = ( href ) ->
 
 jQuery ( $ ) ->
 	$( 'body' ).on 'mousedown', 'a', ( e ) ->
-		# Leave internal links alone
-		return unless isExternal @href
-
-		# Rewrite the link
-		$( @ ).attr 'href', "http://href.li/?#{@href}"
+		# Rewrite the link if it's external
+		$( @ ).attr( 'href', "http://href.li/?#{@href}" ) if isExternal @href
