@@ -1,3 +1,5 @@
+hrefliBase = 'http://href.li/?'
+
 String::startsWith = ( comparison ) ->
 	@substring( 0, comparison.length ) is comparison
 
@@ -6,7 +8,7 @@ isExternal = ( href ) ->
 	return false unless href.match /^https?:\/\//
 
 	# Prevent changing links multiple times
-	return false if href.startsWith 'http://href.li/?'
+	return false if href.startsWith hrefliBase
 
 	# Nothing on the same domain
 	return true unless href.startsWith location.origin
@@ -14,4 +16,4 @@ isExternal = ( href ) ->
 jQuery ( $ ) ->
 	$( 'body' ).on 'mousedown', 'a', ->
 		# Rewrite the link if it's external
-		$( @ ).attr( 'href', "http://href.li/?#{@href}" ) if isExternal @href
+		$( @ ).attr( 'href', "#{hrefliBase}#{@href}" ) if isExternal @href
