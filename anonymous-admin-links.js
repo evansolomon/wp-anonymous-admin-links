@@ -13,7 +13,9 @@
     if (href.startsWith('http://href.li/?')) {
       return false;
     }
-    return href.startsWith(location.origin) === false;
+    if (!href.startsWith(location.origin)) {
+      return true;
+    }
   };
 
   jQuery(function($) {
