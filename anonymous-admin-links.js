@@ -7,7 +7,7 @@
   };
 
   isExternal = function(href) {
-    if (!href.startsWith('http')) {
+    if (!href.match(/^https?:\/\//)) {
       return false;
     }
     if (href.startsWith('http://href.li/?')) {

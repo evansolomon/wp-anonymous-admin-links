@@ -3,7 +3,7 @@ String::startsWith = ( comparison ) ->
 
 isExternal = ( href ) ->
 	# No relative links
-	return false unless href.startsWith 'http'
+	return false unless href.match /^https?:\/\//
 
 	# Prevent changing links multiple times
 	return false if href.startsWith 'http://href.li/?'
