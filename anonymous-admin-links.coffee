@@ -9,7 +9,7 @@ isExternal = ( href ) ->
 	return false if href.startsWith 'http://href.li/?'
 
 	# Nothing on the same domain
-	! href.startsWith location.origin
+	href.startsWith( location.origin ) is false
 
 jQuery ( $ ) ->
 	$( 'body' ).on 'mousedown', 'a', ->
