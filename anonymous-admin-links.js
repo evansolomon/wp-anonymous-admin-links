@@ -18,9 +18,10 @@
     if (href.startsWith(hrefliBase)) {
       return false;
     }
-    if (!href.startsWith(location.origin)) {
-      return true;
+    if (href.startsWith(location.origin)) {
+      return false;
     }
+    return true;
   };
 
   jQuery(function($) {

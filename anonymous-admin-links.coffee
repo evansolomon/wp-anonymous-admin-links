@@ -14,7 +14,10 @@ isExternal = ( href ) ->
 	return false if href.startsWith hrefliBase
 
 	# Nothing on the same domain
-	return true unless href.startsWith location.origin
+	return false if href.startsWith location.origin
+
+	# If we got here, the link is external
+	true
 
 jQuery ( $ ) ->
 	$( 'body' ).on 'mousedown', 'a', ->
