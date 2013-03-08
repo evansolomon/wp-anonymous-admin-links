@@ -3,7 +3,7 @@ Contributors: evansolomon
 Tags: wp-admin, link, referrer
 Requires at least: 3.4
 Tested up to: 3.5.1
-Stable tag: 1.01
+Stable tag: 1.02
 
 Hide the referrer for external links in wp-admin using href.li
 
