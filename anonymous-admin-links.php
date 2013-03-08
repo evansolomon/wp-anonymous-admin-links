@@ -3,7 +3,7 @@
 /*
 Plugin Name: Anonymous Admin Links
 Description: Hide the referrer for external links in the WordPress admin
-Version: 1.0
+Version: 1.01
 Author: Evan Solomon
 Author URI: http://evansolomon.me
 */
