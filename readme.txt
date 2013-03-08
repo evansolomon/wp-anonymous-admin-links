@@ -5,7 +5,7 @@ Requires at least: 3.4
 Tested up to: 3.5.1
 Stable tag: 1.0
 
-Hide the referrer for external links in `wp-admin` using [href.li](http://href.li).
+Hide the referrer for external links in wp-admin using href.li
 
 == Description ==
 
