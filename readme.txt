@@ -1,4 +1,4 @@
-=== Anonymous Admin ===
+=== Anonymous Admin Links ===
 Contributors: evansolomon
 Tags: wp-admin, link, referrer
 Requires at least: 3.4
