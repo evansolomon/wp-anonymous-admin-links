@@ -18,5 +18,15 @@ isExternal = ( href ) ->
 
 jQuery ( $ ) ->
 	$( 'body' ).on 'mousedown', 'a', ->
-		# Rewrite the link if it's external
-		$( @ ).attr( 'href', "#{hrefliBase}#{@href}" ) if isExternal @href
+		originalLink = @href
+
+		# Only rewrite the link if it's external
+		return unless isExternal originalLink
+
+		$this = $ @
+		$this.attr 'href', "#{hrefliBase}#{originalLink}"
+
+		# Return the original link after navigation
+		setTimeout ->
+			$this.attr 'href', originalLink
+		, 1
